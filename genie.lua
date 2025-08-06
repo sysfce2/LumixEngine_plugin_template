@@ -1,5 +1,4 @@
-project "myplugin"
-	libType()
+if plugin "myplugin" then
 	files { 
 		"src/**.c",
 		"src/**.cpp",
@@ -7,7 +6,5 @@ project "myplugin"
 		"genie.lua"
 	}
 	defines { "BUILDING_MYPLUGIN" }
-	links { "engine" }
-	defaultConfigurations()
-
-linkPlugin("myplugin")
+	dynamic_link_plugin { "engine" }
+end
